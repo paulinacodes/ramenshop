@@ -145,7 +145,6 @@ body {
 .grid-item {
     background-color: #f1f1eb;
     padding: 20px;
-    border: 2px solid #1e300d;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,7 +171,7 @@ body {
 
 .price {
     font-weight: bold;
-    color: #ff4500;
+    color: #000000;
     font-size: 1.2rem;
     margin-top: auto;
 }
