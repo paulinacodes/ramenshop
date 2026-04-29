@@ -1,10 +1,9 @@
-/* Płynne przewijanie do sekcji */
 html {
     scroll-behavior: smooth;
 }
 
 body { 
-    background-color: #f1f1eb; /* Twój beż */
+    background-color: #f1f1eb; 
     margin: 0;
     color: #201f1f;
     font-family: Arial, sans-serif;
@@ -17,9 +16,10 @@ body {
     font-style: normal;
 }
 
-/* --- RUCHOMY PASEK --- */
+/*GÓRNY PASEK PROMOCJI*/
+
 .top-announcement {
-    background-color: #1e300d; /* Ciemna zieleń */
+    background-color: #1e300d; 
     color: #f1f1eb;
     padding: 8px 0;
     overflow: hidden;
@@ -38,7 +38,6 @@ body {
     to { transform: translateX(-50%); }
 }
 
-/* --- NAGŁÓWEK --- */
 .header_content {
     background-color: #f1f1eb;
     padding: 20px 20px;
@@ -64,7 +63,6 @@ body {
     text-transform: uppercase;
 }
 
-/* --- NAWIGACJA --- */
 .navbar {
     position: sticky;
     top: 0;
@@ -73,7 +71,7 @@ body {
 
 .menu {
     display: flex;
-    list-style: none; /* Poprawione z list-style-position */
+    list-style: none; 
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -94,7 +92,7 @@ body {
     background-color: #ff4500;
 }
 
-/* --- SEKCJA O NAS --- */
+/*HOME*/
 .intro-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -120,7 +118,7 @@ body {
     filter: grayscale(20%);
 }
 
-/* --- SEKCJA MENU (GRID) --- */
+/*MENU*/
 .menu-section {
     padding: 60px 5%;
     background-color: #ffffff;
@@ -135,7 +133,6 @@ body {
 
 .grid-container {
     display: grid;
-    /* Automatyczne dopasowanie: min 300px szerokości kafelka */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
@@ -176,7 +173,60 @@ body {
     margin-top: auto;
 }
 
-/* --- STOPKA --- */
+/*O NAS*/
+
+.about-vibe-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dwie równe kolumny */
+    gap: 50px;
+    padding: 80px 10%;
+    background-color: #f1f1eb; /* Powrót do jasnego tła dla kontrastu z menu */
+    align-items: center;
+}
+
+.about-vibe-image img {
+    width: 100%;
+    height: 450px; /* Stała wysokość dla lepszego efektu */
+    object-fit: cover; /* Zdjęcie wypełni przestrzeń bez rozciągania */
+    border-radius: 5px; /* Delikatniejsze zaokrąglenie dla kontrastu z intro */
+    box-shadow: 15px 15px 0px #1e300d; /* Stylowy "cień" w kolorze Twojej marki */
+}
+
+.about-vibe-text {
+    padding: 20px;
+}
+
+.about-vibe-text h2 {
+    text-align: left; /* Tytuł do lewej w tej sekcji */
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.about-vibe-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Responsywność dla tej sekcji */
+@media (max-width: 768px) {
+    .about-vibe-section {
+        grid-template-columns: 1fr; /* Na telefonie jedno pod drugim */
+        padding: 40px 5%;
+    }
+    
+    .about-vibe-image {
+        order: 2; /* Zdjęcie ląduje pod tekstem na małych ekranach */
+    }
+    
+    .about-vibe-image img {
+        height: 300px;
+        box-shadow: 10px 10px 0px #1e300d;
+    }
+}
+
+/*STOPKA*/
 footer {
     background-color: #1e300d;
     color: #f1f1eb;
@@ -205,7 +255,7 @@ footer {
     opacity: 0.7;
 }
 
-/* Responsywność dla telefonów */
+/*RESPONSYWNOŚĆ DLA TELEFONÓW*/
 @media (max-width: 768px) {
     .intro-section {
         grid-template-columns: 1fr;
