@@ -1,0 +1,154 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<div class="top-announcement">
+    <div class="marquee">
+        <span>🍜 ZNIŻKA -20% NA PIERWSZĄ DOSTAWĘ Z KODEM: SHOYU20 🍜&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>🍜 ZNIŻKA -20% NA PIERWSZĄ DOSTAWĘ Z KODEM: SHOYU20 🍜&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+</div>
+
+<header>
+    <div class="header_content">
+        <div class="header_logo">
+            <img src="img/ramen4.png" alt="logo">
+        </div>
+        <div class="header_title">
+            <p>the</p> <p>Ramen</p><p>Club</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">O nas</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="#" class="intro-section">
+        <div class="intro-text">
+            <h2>Witaj w The Ramen Club!</h2>
+            <p>The Ramen Club to miejsce, w którym japońska tradycja spotyka się z miejskim luzem. Serwujemy autorski ramen na bazie gęstych, aromatycznych bulionów, ze świeżym makaronem i pieczołowicie przygotowanymi dodatkami.</p>
+            <p>Bez kompromisów, bez drogi na skróty – tylko głośne siorbanie i czysty smak umami. Wpadaj na najlepszy ramen w mieście.</p>
+        </div>
+        <div class="intro-image">
+            <img src="img\058920cf-8700-4e86-b7b9-cc12a53e76a7.jpg" alt="Ramen Club Vibe">
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Menu</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="img\classic_shoyu.jpg" alt="Ramen">
+                <h3>Classic Shoyu</h3>
+                <p>Klarowny, esencjonalny wywar drobiowo-wieprzowy doprawiony aromatycznym sosem sojowym. Klasyka w najczystszym wydaniu – balans, lekkość i głęboki smak umami.</p>
+                <span class="price">38 zł</span>
+            </div>
+            <div class="grid-item">
+                <img src="img\spicy_miso.jpg" alt="Ramen">
+                <h3>Spicy Miso</h3>
+                <p>Rozgrzewająca moc pasty miso z pikantnym twistem. Gęsty, kremowy bulion z wyraźną nutą chilli, który idealnie podkręca temperaturę i apetyt.</p>
+                <span class="price">42 zł</span>
+            </div>
+            <div class="grid-item">
+                <img src="img\tantanmen.jpg" alt="Ramen">
+                <h3>Tantanmen</h3>
+                <p>Zainspirowany kuchnią syczuańską. Kremowy bulion z pastą sezamową, podawany z pikantnym mielonym mięsem i olejem chilli. Intensywny, orzechowy i uzależniający.</p>
+                <span class="price">44 zł</span>
+            </div>
+            <div class="grid-item">
+                <img src="img\vege_love.jpg" alt="Ramen">
+                <h3>Vegan Love</h3>
+                <p>100% roślinnej miłości. Bogaty, wielowarstwowy wywar warzywny z dodatkiem mleka sojowego lub pasty sezamowej, pełen świeżych dodatków, które zachwycą nie tylko wegan.</p>
+                <span class="price">39 zł</span>
+            </div>
+            <div class="grid-item">
+                <img src="img\black_garlic.jpg" alt="Ramen">
+                <h3>Black Garlic</h3>
+                <p>Nasz flagowy Tonkotsu z dodatkiem domowego oleju z palonego czosnku (mayu). Ciemny, intrygujący i niesamowicie aromatyczny – dla poszukiwaczy głębokich doznań.</p>
+                <span class="price">43 zł</span>
+            </div>
+            <div class="grid-item">
+                <img src="img\tonkotsu-high.jpg" alt="Ramen">
+                <h3>Tonkotsu High</h3>
+                <p>Królewski wywar wieprzowy gotowany przez wiele godzin do uzyskania niemal kremowej konsystencji. Maksimum kolagenu, maksimum smaku – prawdziwa uczta dla fanów treściwych ramenów.</p>
+                <span class="price">46 zł</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="promo-checker" style="text-align: center; margin: 40px auto; padding: 30px; background-color: #ffffff; max-width: 600px; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0,0,0,0.1);">
+        <h3 style="font-family: 'DR Exclusive Editorial', serif; font-size: 30px; color: #1e300d; margin-bottom: 20px;">Masz kod rabatowy?</h3>
+        <p style="margin-bottom: 15px;">Wpisz go poniżej, aby sprawdzić, czy jest nadal aktywny!</p>
+
+        <div>
+            <input @bind="wpisanyKod" placeholder="Wpisz kod..." style="padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 60%; margin-right: 10px;" />
+            <button @onclick="SprawdzKod" style="padding: 12px 25px; font-size: 16px; background-color: #ff4500; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Sprawdź</button>
+        </div>
+
+        <p style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; color: @kolorKomunikatu;">
+            @komunikat
+        </p>
+    </div>
+
+    <section id="about" class="about-vibe-section">
+        <div class="about-vibe-image">
+            <img src="img\odkuchnitheramenclub.jpg" alt="Nasza kuchnia od środka">
+        </div>
+        <div class="about-vibe-text">
+            <h2 class="section-title">Od Kuchni</h2>
+            <p>Sercem The Ramen Club jest nasza otwarta kuchnia, gdzie tradycyjne japońskie receptury łączymy z pasją do eksperymentów. Każdy wywar to minimum 12 godzin powolnego gotowania, a makaron przygotowujemy tak, by idealnie chłonął smak umami.</p>
+            <p>Wierzymy, że jedzenie to nie tylko posiłek, to doświadczenie. Dlatego dbamy o każdy detal – od selekcji składników od lokalnych dostawców, po rzemieślniczą ceramikę, w której podajemy nasze dania.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-info">
+            <h3>The Ramen Club</h3>
+            <p>ul. Miejska 15, Warszawa</p>
+            <p>Pon-Sb: 12:00 - 22:00</p>
+        </div>
+        <div class="footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+        </div>
+    </div>
+    <p class="copyright">&copy; Projekt i realizacja: Paulina Szmigielska, nr albumu 100277. Wykonane na potrzeby przedmiotu "Wybrane Środowiska Programowania" w ramach studiów na kierunku Informatyka w Społecznej Akademii Nauk w Łodzi.  Grafiki wykorzystane na stronie zostały wygenerowane przy użyciu modelu Gemini.</p>
+
+</footer>
+
+@code {
+    
+    private string wpisanyKod = "";
+    private string komunikat = "";
+    private string kolorKomunikatu = "#201f1f";
+
+   
+    private void SprawdzKod()
+    {
+        if (wpisanyKod.ToUpper() == "SHOYU20")
+        {
+            komunikat = "Świetnie! Kod SHOYU20 jest aktywny. Otrzymujesz 20% zniżki na zamówienie!";
+            kolorKomunikatu = "green";
+        }
+        else if (string.IsNullOrWhiteSpace(wpisanyKod))
+        {
+            komunikat = "Najpierw wpisz kod w pole powyżej.";
+            kolorKomunikatu = "orange";
+        }
+        else
+        {
+            komunikat = $"Niestety, kod '{wpisanyKod}' jest nieprawidłowy lub stracił ważność.";
+            kolorKomunikatu = "red";
+        }
+    }
+}
